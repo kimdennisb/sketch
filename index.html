@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="dennis kim">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="SketchQuick" />
+    <meta name="description" content="Draw sketches on canvas with free hand and mouse and save to device" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="sketchquickicon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Sketch your drawings</title>
+    <!--google ads-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1874032142080834",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+
+<body>
+    <div id="top">
+        <header>SketchQuick</header>
+    </div>
+    <div class="tools">
+        <button id="New">New</button>
+        <button id="Save">Save</button>
+        <select id="Pencil">
+                        <option>Pencil</option>
+                        <option>Circle</option>
+                        <option>Spray</option>
+                        <option>Pattern</option>
+                        <option>Hline</option>
+                        <option>Vline</option>
+                        <option>Square</option>
+                        <option>Diamond</option>
+                </select>
+        <button id="Brush">Brush
+                        <div class="Brush Sizes">
+                           <span class="info">3</span>
+                           <input type="range" value="3" min="1" max="164" id="drawing-line-width" />
+                        </div>
+                </button>
+        <button id="Erase">Erase</button>
+        <div id="Paint">
+            <input type="color" value="#407f1a" id="drawing-color" />
+        </div>
+    </div>
+
+    <canvas id="mycanvas"></canvas>
+    <script src="index.js"></script>
+    <script>
+        (function() {
+            fabric.util.addListener(fabric.window, 'load', function() {
+                var canvas = this._canvas || this.canvas;
+                this._canvases || this.canvases
+                canvas && canvas.calcOffset && canvas.calcOffset();
+
+                if (canvases && canvases.length) {
+                    for (var i = 0; i < canvases.length; i++) {
+                        canvases[i].calcOffset();
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
