@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="dennis kim">
+    <meta name="author" content="Dennis kim">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="SketchQuick" />
@@ -26,38 +26,41 @@
 
 <body>
     <div id="top">
-        <header>SketchQuick</header>
+        <header><a href="/">SketchQuick</a></header>
     </div>
     <div class="tools">
         <button id="New">New</button>
         <button id="Save">Save</button>
         <select id="Pencil">
-                        <option>Pencil</option>
-                        <option>Circle</option>
-                        <option>Spray</option>
-                        <option>Pattern</option>
-                        <option>Hline</option>
-                        <option>Vline</option>
-                        <option>Square</option>
-                        <option>Diamond</option>
-                </select>
+            <option>Pencil</option>
+            <option>Circle</option>
+            <option>Spray</option>
+            <option>Pattern</option>
+            <option>Hline</option>
+            <option>Vline</option>
+            <option>Square</option>
+            <option>Diamond</option>
+        </select>
         <button id="Brush">Brush
-                        <div class="Brush Sizes">
-                           <span class="info">3</span>
-                           <input type="range" value="3" min="1" max="164" id="drawing-line-width" />
-                        </div>
-                </button>
+            <div class="Brush Sizes">
+                <span class="info">3</span>
+                <input type="range" value="3" min="1" max="164" id="drawing-line-width" />
+            </div>
+        </button>
         <button id="Erase">Erase</button>
         <div id="Paint">
             <input type="color" value="#407f1a" id="drawing-color" />
         </div>
     </div>
 
-    <canvas id="mycanvas"></canvas>
+    <div class="canvaswrapper">
+        <canvas id="mycanvas"></canvas>
+    </div>
+
     <script src="index.js"></script>
     <script>
-        (function() {
-            fabric.util.addListener(fabric.window, 'load', function() {
+        (function () {
+            fabric.util.addListener(fabric.window, 'load', function () {
                 var canvas = this._canvas || this.canvas;
                 this._canvases || this.canvases
                 canvas && canvas.calcOffset && canvas.calcOffset();

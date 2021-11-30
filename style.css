@@ -1,121 +1,122 @@
 * {
-    box-sizing:border-box;
+  box-sizing: border-box;
 }
 body {
-    overflow: hidden;
-    font-family: karma;
+  overflow: hidden;
+  font-family: karma;
+  margin: 0px auto;
+}
+.canvaswrapper {
+  height:auto;
+  width: auto;
+  margin: 5px;
 }
 canvas {
-    position: relative;
-    border-top: 1px solid gray;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    margin :5px 0px 18px 0px;
-    background-size:5px 5px;
-    background-image: linear-gradient(to right, rgba(0, 255, 255, 0.05) 1px,transparent 1px),
-    linear-gradient(to bottom,rgb(0,255,255,0.05) 1px,transparent 1px);
+  position: relative;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  background-size: 18px 18px;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(0, 255, 255, 0.05) 1px, transparent 1px);
 }
 #top {
-    position: relative;
-    width:100%;
-    height: 40px;
-    background-color: #474e5d;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  background-color: #474e5d;
 }
 header {
-    position: relative;
-    top: 8px;
-    color: #ffc;
-    font-size: 23px;
-    font-family:'ABeeZee';
+  color: #ffc;
+  font-size: x-large;
+  font-family: "ABeeZee";
+}
+header a {
+  text-decoration: none;;
+  color: inherit;
 }
 .tools {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
-#New,#Pencil,#Brush,#Save,#Erase,#Paint {
-    display: inline-block;
-    position: relative;
-    border-radius: 3px;
-    margin:3px 1px 0 8px;
-    border: 1px solid gray;
-    font-size: 13px;
+#New,
+#Pencil,
+#Brush,
+#Save,
+#Erase {
+  position: relative;
+  border-radius: 3px;
+  margin: 5px 3px 3px 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+  outline: none;
 }
-#New,#Save {
-    background-color:#0a67a3;
+#New,
+#Save {
+  background-color: #0a67a3;
 }
 select {
-    position: relative;
-    width: 38px;
-    outline: none;
-    background-color: beige;
+  width: auto;
+  outline: none;
+  background-color: beige;
 }
 input {
-    position: relative;
-    width: 38px;
+  cursor: pointer;
 }
-button:focus {
-    outline: 0
+#Paint input {
+  width: 38px;
+  height: 19px;
+  margin-left: 3px;
+  outline: none;
 }
-.info {
-    display: inline-block;
-    width: 25px;
-    background: #ffc;
-}
-.tooltipContent {
-    position: absolute;
-    right:-19px;
-    top:30px;
-    display: none;
-    width: 68px;
-    height: 38px;
-    background-color: lightgray;
-    border-radius:6px;
-    padding: 5px 5px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.1s;
-    border: 1px gray solid;
-}
-.tooltipContent::after {
-content: "";
-position: absolute;
-top: -10px;
-left: 35%;
-border-style: solid;
-border-width: 5px;
-border-color:transparent transparent gray transparent;
-}
- .Sizes {
-     position: absolute;
-     display: none;
-     top: 30px;
-     border: 1px gray solid;
-     border-radius: 6px;
-     z-index: 1;
- }
- .Sizes::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 5%;
-    border-style: solid;
-    border-width: 5px;
-    border-color:transparent transparent gray transparent;
- }
 
- /*tablet breakpoint*/
- @media only screen and (min-width:768px){
 .Sizes {
+  position: absolute;
+  display: none;
+  top: 25px;
+  border: 1px gray solid;
+  border-radius: 6px;
+  z-index: 1;
+}
+.Sizes::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 5%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent transparent gray transparent;
+}
+
+/*tablet breakpoint*/
+@media only screen and (min-width: 768px) {
+  .Sizes {
     position: absolute;
     left: 15%;
+  }
 }
- }
 
- /*desktop breakpoint*/
- @media only screen and (min-width:992px){
-    .Sizes {
-        left:14%;
-    }
- }
+/*desktop breakpoint*/
+@media only screen and (min-width: 992px) {
+  .Sizes {
+    left: 14%;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    font-size: large;
+  }
+  #tools {
+    width: 320px;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
